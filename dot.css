@@ -1,81 +1,196 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,900');
-*{
-    box-sizing: border-box;
-}
-body{
-    background:rgb(19, 19, 19);
-    margin:0;
-    padding:0;
-    font-family: 'montserrat', sans-serif;
-}
-.wrapper{
-    width: 90%;
-    padding: 5rem;
-    grid-gap: 0.2rem;
-    color: white;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.blackpink{
-    font-size: 7rem;
-    font-weight: 500;
-    letter-spacing: 8px;
-    padding: 0rem 2rem;
-    border: 10px solid white;
-    text-align: center;
-    opacity:0;
-    border-radius: 5px;
-    animation: lightson .5s ease 3 forwards;
+body {
+  background: #5C258D; 
+  background-image: radial-gradient(at 101.6% 93.1%, #00AFC5 0px, transparent 50%),radial-gradient(at 75.4% 58.9%, #B12482 0px, transparent 50%),radial-gradient(at 42.9% 77.8%, #E8486C 0px, transparent 50%),radial-gradient(at 60.2% 48.4%, #FF8157 0px, transparent 50%),radial-gradient(at 60.2% 15.4%, #FFBD51 0px, transparent 50%),radial-gradient(at 78.9% 26.7%, #F9F871 0px, transparent 50%);
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
-@keyframes lightson{
-    0%{
-        opacity:0;
-        text-shadow: 0px 0px 0px #FE1DAD, 0px 0px 0px #FE1DAD, 0px 0px 0px #FE1DAD;
-        box-shadow: 0px 0px 0px 0px #fe1dad, 0px 0px 0px 0px #fe1dad,0px 0px 0px 0px #fe1dad, inset 0px 0px 0px #FE1DAD;
+
+/* LOGIN CONTAINER  */
+
+.container {
+  background: rgba(250, 250, 255, 0.9);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 400px;
+  max-width: 100%;
+}
+
+/* HEADER  */
+
+.header {
+  border-radius: 1px solid #f0f0f0;
+  padding: 20px 40px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  animation: title 1s ease 0s 1 normal forwards;
+}
+
+@keyframes title {
+0%   {
+  letter-spacing: 10px;
+  color: #f5f9ff;
+  }
+  
+100%   {
+  letter-spacing: 0;
+  color: #2b5175;
+  }
+}
+
+/* FORM  */
+
+.form {
+    padding: 30px 40px 20px;
+}
+
+.form-control {
+  position: relative;
+  margin-bottom: 20px;   
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #2b5175;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-control input {
+  border: transparent;
+  background: transparent;
+  outline: 2px dotted #cbd5e1;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  transition: all 0.4s ease-in;
+}
+
+.form-control input::placeholder {
+  opacity: 0.5;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+input:focus {
+  border: transparent;
+  outline: 2px dotted #2B5175;
+}
+
+.form-control.success input {
+    /* border-color: #2ecc71; */
+    outline: 2px dotted #2ecc71;
+}
+
+.form-control.error input {
+    /* border-color: #e74c3c; */
+   outline: 2px dotted #8b2e31; 
+}
+
+.form-control i {
+  position: absolute;
+  top: 33px;
+  right: 10px;
+  visibility: hidden;
+}
+
+.form-control.success i.fa-check-circle {
+  visibility: visible;
+  color: #2ecc71;
+}
+
+.form-control.error i.fa-exclamation-circle {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+.form-control small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+  color: #8b2e31;
+  font-weight: 600;
+}
+
+/* SUBMIT BUTTON  */
+
+.form button {
+  display: block;
+  background: #512479;
+  background-size: 200% auto;
+  color: #fff;
+  width: 100%;
+  padding: 15px 45px;
+  margin: 30px 0 10px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.form button:hover {
+  background: #2A0053;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* MESSAGE AFTER SUBMITTING  */
+
+.message {
+  padding: 30px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2b5175;
+  text-align: center;
+  text-transform: uppercase;
+  animation: fade-in 1.5s ease-in-out forwards alternate;
+  -webkit-animation: fade-in 1.5s ease-in-out forwards alternate;
+}
+
+.hidden {
+   display: none;
+}
+
+@keyframes fade-in {
+    from {
+        transform: rotate(0deg) scale(0) skew(0deg) translateY(30px);
     }
-    20%{
-        opacity:0.5;
-        text-shadow: 0px 0px 2.5px #FE1DAD, 0px 0px 5px #FE1DAD, 1px 1px 25px #FE1DAD;
-        box-shadow: 0px 0px 5px 0px #fe1dad, 0px 0px 10px 0px #fe1dad,0px 0px 50px 0px #fe1dad, inset 0px 0px 20px #FE1DAD;   
-    }
-    40%{
-        opacity:0;
-        text-shadow: 0px 0px 1px #FE1DAD, 0px 0px 2px #FE1DAD, 0px 0px 10px #FE1DAD;
-        box-shadow: 0px 0px 2px 0px #fe1dad, 0px 0px 5px 0px #fe1dad,0px 0px 25px 0px #fe1dad, inset 0px 0px 10px #FE1DAD;
-    }
-    #FE1DAD;
-}
-100%{
-    opacity: 1;
-    text-shadow:  0px 0px 5px #FE1DAD, 0px 0px 10px #FE1DAD, 1px 1px 50px #FE1DAD;
-    box-shadow: 0px 0px 10px 0px #fe1dad, 0px 0px 30px 0px #fe1dad,0px 0px 100px 0px #fe1dad, inset 0px 0px 30px 
-#FE1DAD;
-}
-.blackpink span{
-    transform: scale(-1);
-    display: inline-block;
-}
-.blackpink_tagline{
-    text-align: right;
-    font-size: .8rem;
-}
-@media(max-width; 1150px){
-    .blackpink{
-        font-size: 5rem;
-        padding: 2rem 0;
-        letter-spacing: 2px;
+    to {
+        transform: rotate(0deg) scale(1) skew(0deg) translateY(0);
     }
 }
-@media(max-width: 789px){
-    .wrapper{
-        width: 100%;
-        padding:2rem;
+
+@-webkit-keyframes fade-in {
+    from {
+        -webkit-transform: rotate(0deg) scale(0) skew(0deg) translateY(30px);
     }
-    .blackpink{
-        font-size: 2rem;
-        letter-spacing: 2px;
+    to {
+        -webkit-transform: rotate(0deg) scale(1) skew(0deg) translateY(0);
     }
 }

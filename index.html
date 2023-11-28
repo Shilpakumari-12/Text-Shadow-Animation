@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <div class="wrapper">
-   <title>link css to html</title>
-   <link rel="stylesheet" type="text/css" href="dot.css">
-    <div class="blackpink">BLA<span>C</span>KPI<SPAN>N</SPAN>K</div>
-    <div class="blackpink_tagline"></div>
- </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="dot.css">
 </head>
 <body>
+    <div class="container">
+      <div class="header">
+          <h2>Create Account</h2>
+      </div>
+      
+      <form class="form" id="form">
+          <div class="form-control">
+              <label for="">Username</label>
+              <input type="text" placeholder="username" id="username">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+          </div>
+          <div class="form-control">
+              <label for="">Email</label>
+              <input type="email" placeholder="info@email.com" id="email">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+          </div>
+          <div class="form-control">
+              <label for="">Password</label>
+              <input type="password" placeholder="password" id="password">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+          </div>
+          <div class="form-control">
+              <label for="">Confirm Password</label>
+              <input type="password" placeholder="confirm password" id="confirmpassword">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+          </div>
+          <button>Submit</button>
+      </form>
+      <div class="message hidden">
+          <p>Submitted! 🎉</p>
+      </div>
+    </div>
+  </body>
+  <script src="content.js"></script>
+      
+</body>
+</html>
